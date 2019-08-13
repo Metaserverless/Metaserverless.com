@@ -19,7 +19,8 @@ module.exports = (env, argv) => {
     },
     devtool: production ? 'source-map' : 'eval-source-map',
     devServer: {
-      contentBase: './dist',
+      contentBase: path.join(__dirname, './src/index.html'),
+      watchContentBase: true,
       hot: true,
       port: PORT,
     },
