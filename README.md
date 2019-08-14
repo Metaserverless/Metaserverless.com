@@ -33,32 +33,42 @@ yarn build
 
 ## Formatting and linting
 
-To format files with changes:
+To lint `.html` and `.js` files accordingly with [ESLint](https://eslint.org/docs/user-guide/command-line-interface):
 
 ```bash
-yarn format
+yarn lint:html
+yarn lint:js
 ```
 
-To format and lint files with changes:
+To lint `.scss` files with [Stylelint](https://stylelint.io/user-guide/cli):
 
 ```bash
-yarn fix
+yarn lint:styles
 ```
 
-To lint files:
+To check `.json` or `.*rc`, `.md` files accordingly with [Prettier](https://prettier.io/docs/en/cli.html#check):
+
+```bash
+yarn lint:json
+yarn lint:md
+```
+
+To lint all files:
 
 ```bash
 yarn lint
 ```
 
-To lint `.html`, `.js`, `.json` or `.*rc`, `.md`, `.scss` files accordingly:
+To format code with [Prettier](https://prettier.io/docs/en/cli.html#write):
 
 ```bash
-yarn lint:html
-yarn lint:js
-yarn lint:json
-yarn lint:md
-yarn lint:styles
+yarn format
+```
+
+To format code and lint files fixing problems automatically:
+
+```bash
+yarn fix
 ```
 
 ## License
