@@ -78,9 +78,9 @@
     }
   },
   "lint-staged": {
+    "**/*.{html,js,json,md,*rc,scss}": "prettier -c",
     "**/*.html": "eslint --ext",
     "**/*.js": "eslint",
-    "**/*.scss": "stylelint",
-    "**/*.(json|md|*rc)": "prettier -c"
+    "**/*.scss": "stylelint"
   }
 }
