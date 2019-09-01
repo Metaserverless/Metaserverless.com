@@ -1,0 +1,105 @@
+/******* GLOBAL *******/
+$color-text: #fefefe;
+$color-background: #191919;
+
+/******* GRID *******/
+$size-small: 576px;
+$size-medium: 768px;
+$size-large: 992px;
+$size-extra-large: 1200px;
+
+/******* ELEMENT-WISE *******/
+$section--padding: 20px;
+$container--padding: 10px;
+
+$command--font-size--default: 32px;
+$command--font-size--small: 24px;
+$command--font-size--extra-small: 20px;
+$command--with-typing--animation-delay: 0.5s;
+$command--with-typing--step-duration: 0.075s;
+$command-prompt-symbol: '>';
+$command-prompt-symbol--padding: 10px;
+
+$caret-color: orange;
+
+/******* MIXINS *******/
+
+/* MEDIA QUERIES */
+@mixin for-extra-small-sizes {
+  @media (min-width: 0) and (max-width: $size-small - 1px) {
+    @content;
+  }
+}
+
+@mixin for-small-sizes {
+  @media (min-width: $size-small) and (max-width: $size-medium - 1px) {
+    @content;
+  }
+}
+
+@mixin for-extra-small-and-small-sizes {
+  @media (min-width: 0) and (max-width: $size-medium - 1px) {
+    @content;
+  }
+}
+
+@mixin for-medium-sizes {
+  @media (min-width: $size-medium) and (max-width: $size-large - 1px) {
+    @content;
+  }
+}
+
+@mixin for-large-sizes {
+  @media (min-width: $size-large) and (max-width: $size-extra-large - 1px) {
+    @content;
+  }
+}
+
+@mixin for-extra-large-sizes {
+  @media (min-width: $size-extra-large) {
+    @content;
+  }
+}
+
+/******* ANIMATIONS *******/
+
+/* TYPING SET */
+@keyframes typingHidingDelay {
+  from {
+    width: 0;
+  }
+  to {
+    width: 0;
+  }
+}
+
+@keyframes typingWriting {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typingKeepingCaret {
+  0% {
+    border-color: $caret-color;
+  }
+  99% {
+    border-color: $caret-color;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+
+/* APPEARING SET */
+@keyframes appearing {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
