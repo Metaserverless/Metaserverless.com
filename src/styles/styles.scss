@@ -69,12 +69,16 @@ li {
     typingWriting $command--with-typing--step-duration * $steps
       steps($steps, end) $command--with-typing--animation-delay,
     typingKeepingCaret $command--with-typing--animation-delay +
-      $command--with-typing--step-duration * $steps + 0.2s;
+      $command--with-typing--step-duration * $steps +
+      $command--with-typing--writing-pause;
 }
 
 @mixin content--appearing-after-typing--animation($steps) {
   animation: appearing 0.5s linear $command--with-typing--animation-delay +
-    $command--with-typing--step-duration * $steps + 0.2s;
+    $command--with-typing--step-duration * $steps +
+    $command--with-typing--writing-pause +
+    $content--appearing-after-typing--delay-after-enter;
+  animation-fill-mode: forwards;
 }
 
 .typewriter-container {
@@ -134,6 +138,8 @@ li {
   }
 
   &--appearing-after-typing {
+    opacity: 0;
+
     @each $name, $length in $heading-text-length {
       &.content-#{$name} {
         @include content--appearing-after-typing--animation($length);

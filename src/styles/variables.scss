@@ -21,8 +21,11 @@ $command--font-size--small: 24px;
 $command--font-size--extra-small: 20px;
 $command--with-typing--animation-delay: 0.5s;
 $command--with-typing--step-duration: 0.075s;
+$command--with-typing--writing-pause: 0.2s;
 $command-prompt-symbol: '>';
 $command-prompt-symbol--padding: 10px;
+
+$content--appearing-after-typing--delay-after-enter: 0.3s;
 
 $caret-color: orange;
 
