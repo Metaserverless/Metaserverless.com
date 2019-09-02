@@ -1,5 +1,14 @@
 @import 'variables';
 
+$heading-text-length: (
+  'home': 15,
+  'about': 6,
+  'technology': 22,
+  'customers': 19,
+  'functionality': 31,
+  'author': 7,
+);
+
 * {
   box-sizing: border-box;
 }
@@ -24,11 +33,6 @@ h3,
 p,
 li {
   color: $color-text;
-}
-
-h1,
-h2 {
-  font-family: $font-heading;
 }
 
 .section {
@@ -77,6 +81,7 @@ h2 {
   display: flex; /* hack (along with div around html element with 'command--with-typing' class) to adjust block element's width to its content*/
 
   .command {
+    font-family: $font-heading;
     font-size: $command--font-size--default;
 
     @include for-small-sizes {
@@ -87,7 +92,7 @@ h2 {
       font-size: $command--font-size--extra-small;
     }
 
-    &--first-heading {
+    &-home {
       font-size: $command--font-size--default * 1.5;
 
       @include for-small-sizes {
@@ -104,25 +109,10 @@ h2 {
       border-right: 0.4em solid transparent;
       white-space: nowrap; /* Keeps the content on a single line */
 
-      /* TODO replace with @each and scss maps*/
-      /* TODO depends on length+1, replace with js?*/
-      &--home {
-        @include command--with-typing--animation(15);
-      }
-      &--about {
-        @include command--with-typing--animation(6);
-      }
-      &--technology {
-        @include command--with-typing--animation(22);
-      }
-      &--customers {
-        @include command--with-typing--animation(19);
-      }
-      &--functionality {
-        @include command--with-typing--animation(31);
-      }
-      &--author {
-        @include command--with-typing--animation(7);
+      @each $name, $length in $heading-text-length {
+        &.command-#{$name} {
+          @include command--with-typing--animation($length);
+        }
       }
     }
 
@@ -139,7 +129,15 @@ h2 {
 .content {
   font-family: $font-running;
 
+  &-home {
+    font-family: $font-heading;
+  }
+
   &--appearing-after-typing {
-    @include content--appearing-after-typing--animation(31);
+    @each $name, $length in $heading-text-length {
+      &.content-#{$name} {
+        @include content--appearing-after-typing--animation($length);
+      }
+    }
   }
 }
