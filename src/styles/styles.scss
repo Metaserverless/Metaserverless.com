@@ -28,7 +28,7 @@ li {
 
 h1,
 h2 {
-  font-family: monospace;
+  font-family: $font-heading;
 }
 
 .section {
@@ -137,6 +137,8 @@ h2 {
 }
 
 .content {
+  font-family: $font-running;
+
   &--appearing-after-typing {
     @include content--appearing-after-typing--animation(31);
   }
