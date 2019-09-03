@@ -65,7 +65,12 @@ module.exports = (env, argv) => {
                 plugins: () => [autoprefixer()],
               },
             },
-            'sass-loader',
+            {
+              loader: 'sass-loader',
+              options: {
+                includePaths: ['node_modules'],
+              },
+            },
           ],
         },
         {

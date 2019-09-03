@@ -1,4 +1,5 @@
 @import 'variables';
+@import '~material-components-web/material-components-web'; // NB: it is mandatory to include it *after* variables
 
 $heading-text-length: (
   'home': 15,
@@ -19,20 +20,13 @@ body {
   width: 100%;
   background-color: $color-background;
   overflow-x: hidden;
+  color: $color-text;
 }
 
 ul,
 li {
   display: block;
   padding: 0;
-}
-
-h1,
-h2,
-h3,
-p,
-li {
-  color: $color-text;
 }
 
 .section {
@@ -146,4 +140,17 @@ li {
       }
     }
   }
+}
+
+.customer-card__media {
+  text-align: center;
+  background-color: #c67100;
+
+  .material-icons {
+    font-size: 128px;
+  }
+}
+
+.customer-card__content {
+  padding: 16px;
 }
