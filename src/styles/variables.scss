@@ -1,10 +1,15 @@
 /******* GLOBAL *******/
 $color-text: #fefefe;
-$color-background: #191919;
+$color-background: #121212;
+
+/******* MATERIAL *******/
+$mdc-theme-background: $color-background;
+$mdc-theme-surface: mix(white, $color-background, 9%);
+$mdc-theme-on-surface: $color-text;
 
 /******* TYPOGRAPHY *******/
 $font-heading: Fira Mono, monospace;
-$font-running: Fira Sans, sans-serif;
+$font-running: Roboto, sans-serif;
 
 /******* GRID *******/
 $size-small: 576px;
