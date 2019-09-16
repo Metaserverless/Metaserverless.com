@@ -1,9 +1,6 @@
-import Container from '@material-ui/core/Container';
-import React, { useCallback, useState } from 'react';
+import React from 'react';
+import BaseSection from './BaseSection';
 import SectionWithAnchors from './bg/SectionWithAnchors';
-import Command from './Command';
-import SessionAnchor from './SessionAnchor';
-import Typewriter from './Typewriter';
 
 /*
 # Development:
@@ -33,22 +30,12 @@ Network and applied code security
 Data-, event-, video-, audio-streaming over cluster and to client apps
 */
 
-const FunctionalitySection = () => {
-  const [showContent, setShowContent] = useState(false);
-  const onTitleAnimationEnd = useCallback(() => setShowContent(true), []);
-
-  return (
-    <SectionWithAnchors>
-      <SessionAnchor name="features" />
-      <Container>
-        <Command variant="h2" gutterBottom>
-          <Typewriter onAnimationEnd={onTitleAnimationEnd}>
-            functionality --out-of-the-box
-          </Typewriter>
-        </Command>
-      </Container>
-    </SectionWithAnchors>
-  );
-};
+const FunctionalitySection = () => (
+  <BaseSection
+    anchor="features"
+    sectionComponent={SectionWithAnchors}
+    title="functionality --out-of-the-box"
+  />
+);
 
 export default FunctionalitySection;

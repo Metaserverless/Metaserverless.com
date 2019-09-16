@@ -2,11 +2,11 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import SectionWithSpaceObjects from './bg/SectionWithSpaceObjects';
-import SessionAnchor from './SessionAnchor';
+import SectionAnchor from './SectionAnchor';
 
 const AboutSection = () => (
   <SectionWithSpaceObjects>
-    <SessionAnchor name="about" />
+    <SectionAnchor name="about" />
     <Container>
       <Typography variant="h3" component="p">
         Open-source technology stack that unites hosting providers around the

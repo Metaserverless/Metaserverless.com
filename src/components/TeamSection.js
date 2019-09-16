@@ -1,24 +1,13 @@
-import React, { useCallback, useState } from 'react';
-import Command from './Command';
-import SessionAnchor from './SessionAnchor';
-import Typewriter from './Typewriter';
+import React from 'react';
+import BaseSection from './BaseSection';
 import SectionWithTopography from './bg/SectionWithTopography';
-import Container from '@material-ui/core/Container';
 
-const TeamSection = () => {
-  const [showContent, setShowContent] = useState(false);
-  const onTitleAnimationEnd = useCallback(() => setShowContent(true), []);
-
-  return (
-    <SectionWithTopography>
-      <SessionAnchor name="team" />
-      <Container>
-        <Command variant="h2" gutterBottom>
-          <Typewriter onAnimationEnd={onTitleAnimationEnd}>team</Typewriter>
-        </Command>
-      </Container>
-    </SectionWithTopography>
-  );
-};
+const TeamSection = () => (
+  <BaseSection
+    anchor="team"
+    sectionComponent={SectionWithTopography}
+    title="team"
+  />
+);
 
 export default TeamSection;
